@@ -5,16 +5,11 @@ function createLights() {
     const ambientLight = new HemisphereLight(
         'white', //bright sky color
         'darksLategrey', //dark ground color
-        5, //intensity
+        10, //intensity
         );
     const mainLight = new DirectionalLight('white', 5);
     //move the light right, up and towards us
     mainLight.position.set(10, 10, 10);
-
-    mainLight.tick = (delta) => {
-        light.position.x += 0.5*delta;
-        light.position.y -= 0.5*delta;
-   }
 
     return {
         ambientLight,

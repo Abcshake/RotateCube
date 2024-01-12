@@ -8,7 +8,7 @@ function createCamera() {
         100, // far clipping plane
     )
     // move the camera back so we can view the scene
-    camera.position.set(0, 0, 20);
+    camera.position.set(-5, 5, 7);
 
     // camera.tick = (delta) => {
     //     if (camera.position.z >= 30){

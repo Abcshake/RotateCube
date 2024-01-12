@@ -1,11 +1,14 @@
 import { World } from "./World/World";
 let world;
-function main() {
+async function main() {
   //Get a reference to the container element
   const container = document.querySelector("#scene-container");
   const button = document.querySelector("#render-button");
   //Create an instance of the world app
   world = new World(container);
+
+  // complete async tasks
+  await world.init(); 
  
   world.render();
 
@@ -20,4 +23,6 @@ function main() {
 }
 
 //call main to start the app
-main();
+main().catch((err) => {
+  console.error(err);
+});
